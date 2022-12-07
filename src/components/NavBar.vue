@@ -32,6 +32,26 @@ export default {
         {
           title: "Spesialis Anak",
           url: "Spesialis Anak",
+          subMenu: [
+            {
+              title: "Bedah Vaskular",
+              url: "Bedah Vaskular",
+            },
+            {
+              title: "Bedah Umum",
+              url: "Bedah Umum",
+              subMenu: [
+                {
+                  title: "Bedah Vaskular",
+                  url: "Bedah Vaskular",
+                },
+                {
+                  title: "Bedah Umum",
+                  url: "Bedah Umum",
+                },
+              ],
+            },
+          ],
         },
       ],
     };
@@ -177,27 +197,44 @@ export default {
       :class="[isActive ? 'hidden' : '']"
     >
       <div class="relative">
-        <button class="block py-2 px-4 text-sm hover:bg-gray-200">
+        <a class="block py-2 px-4 text-sm hover:bg-gray-200">
           Jadwal Praktek
-        </button>
+        </a>
         <!-- <ul class="absolute">
                 <li v-for="(menu,index) in this.menus" v-bind:key="index">
                     <h1>{{ menu.title }}</h1> 
                 </li>
             </ul> -->
       </div>
-      <a href="" class="block py-2 px-4 text-sm hover:bg-gray-200"
-        >Pendaftaran Pasien</a
+      <router-link
+        to="/PendaftaranPasien"
+        class="block py-2 px-4 text-sm hover:bg-gray-200"
+        >Pendaftaran Pasien</router-link
       >
-      <a href="" class="block py-2 px-4 text-sm hover:bg-gray-200"
-        >Data antrian</a
-      >
-      <a href="" class="block py-2 px-4 text-sm hover:bg-gray-200">Login</a>
-      <a
-        href=""
-        class="block py-2 px-4 text-sm bg-green-400 hover:bg-green-600 hover:text-gray-900 transition duration-300"
-        >Signup</a
-      >
+      <div v-if="isUser">
+        <router-link
+        to="/DataAntrian"
+        class="block py-2 px-4 text-sm hover:bg-gray-200"
+        
+        >Data antrian</router-link >
+        <router-link
+        to="/Profile"
+        class="block py-2 px-4 text-sm hover:bg-gray-200"
+        
+        >Edit Profile</router-link >
+
+      </div>
+      
+      <div v-if="!isUser">
+        <router-link to="/Login" class="block py-2 px-4 text-sm hover:bg-gray-200"
+          >Login</router-link
+        >
+        <router-link
+          to="/Signin"
+          class="block py-2 px-4 text-sm bg-green-400 hover:bg-green-600 hover:text-gray-900 transition duration-300"
+          >Signin</router-link
+        >
+      </div>
     </div>
   </nav>
 

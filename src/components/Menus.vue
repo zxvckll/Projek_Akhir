@@ -9,10 +9,10 @@ export default {
 };
 </script>
 <template>
-  <div class="border" v-if="menu.subMenu">
+  <div class="border relative" v-if="menu.subMenu">
     <button
       @click="isMenuActive = !isMenuActive"
-      class="py-2 px-4 hover:text-gray-900 inline"
+      class="py-2 px-4 hover:text-gray-900 inline "
     >
       {{ menu.title}}<svg
         xmlns="http://www.w3.org/2000/svg"
@@ -30,7 +30,7 @@ export default {
       </svg>
     </button>
     <ul
-      class="left-full top-0 w-max justify-center grid-cols-1 absolute bg-gray-100 text-gray-700"
+      class="left-full absolute top-0 w-max justify-center grid-cols-1 absolute bg-gray-100 text-gray-700"
     >
       <Menus
         :class="[isMenuActive ? 'hidden' : '']"
