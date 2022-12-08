@@ -11,6 +11,7 @@ export default {
     return {
       DataDokter: [
         {
+          id:123,
           Nama: "dr. Triana Darmayanti Akbar, SpA",
           ImageUrl:
             "http://rsjakarta.co.id/wp-content/uploads/2020/09/triana.jpg",
@@ -32,6 +33,7 @@ export default {
           ],
         },
         {
+          id:124,
           Nama: "dr. Triana Darmayanti Akbar, SpA",
           ImageUrl:
             "http://rsjakarta.co.id/wp-content/uploads/2020/09/triana.jpg",
@@ -49,6 +51,7 @@ export default {
           ],
         },
         {
+          id:125,
           Nama: "dr. Triana Darmayanti Akbar, SpA",
           ImageUrl:
             "http://rsjakarta.co.id/wp-content/uploads/2020/09/triana.jpg",

@@ -9,8 +9,10 @@ export default {
   },
   data() {
     return {
-      selectedData: {},
+      selectedJamPraktek: {},
       isUser : 'Dokter',
+      isAdmin : false,
+      DokterID : 124,
       showModal: false,
       showDeleteModal: false,
     };
@@ -24,17 +26,17 @@ export default {
       let id = event.srcElement.id;
       console.log(id);
       if (id == 0) {
-        this.selectedData = {};
+        this.selectedJamPraktek = {};
         this.showModal = true;
       } else {
-        this.selectedData = this.data.Waktu.filter((d) => d.id == id);
+        this.selectedJamPraktek = this.data.Waktu.filter((d) => d.id == id);
         this.showModal = true;
       }
     },
     openDeleteModal() {
       let id = event.srcElement.id;
       console.log(id);
-      this.selectedData = this.data.Waktu.filter((d) => d.id == id);
+      this.selectedJamPraktek = this.data.Waktu.filter((d) => d.id == id);
       this.showDeleteModal = true;
     },
     deleteData() {
@@ -68,7 +70,7 @@ export default {
               <tr>
                 <th>Hari</th>
                 <th>Waktu</th>
-                <th v-if="isUser != 'Pasien'">Action</th>
+                <th v-if="(isUser != 'Pasien')&&(DokterID == data.id)||(isAdmin)">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -79,7 +81,7 @@ export default {
               >
                 <td class="pr-10">{{ jadwalPraktek.hari }}</td>
                 <td>{{ jadwalPraktek.jam }}</td>
-                <td class="flex items-center justify-center" v-if="isUser !='Pasien'">
+                <td class="flex items-center justify-center" v-if="(isUser != 'Pasien')&&(DokterID == data.id)||(isAdmin)">
                   <button
                     class="bg-green-400 text-black rounded py-2 px-2 hover:bg-green-600"
                     :id="jadwalPraktek.id"
@@ -91,7 +93,7 @@ export default {
                   <Teleport to="body">
                     <!-- use the modal component, pass in the prop -->
                     <ModalJadwalPraktek
-                      :data="selectedData"
+                      :data="selectedJamPraktek"
                       :show="showModal"
                       @close="showModal = false"
                     >
@@ -108,7 +110,7 @@ export default {
                   <Teleport to="body">
                     <!-- use the modal component, pass in the prop -->
                     <DeleteModal
-                      :data="selectedData"
+                      :data="selectedJamPraktek"
                       :show="showDeleteModal"
                       @close="showDeleteModal = false"
                       @delete="deleteData()"
@@ -119,7 +121,7 @@ export default {
               </tr>
             </tbody>
           </table>
-          <div class=" mx-5 my-5" v-if="isUser != 'Pasien' ">
+          <div class=" mx-5 my-5" v-if="(isUser != 'Pasien')&&(DokterID == data.id)||(isAdmin) ">
             <button
               :id="0"
               class="mt-10 py-3 px-5 bg-blue-400 text-black rounded hover:bg-blue-600"
