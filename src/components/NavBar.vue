@@ -13,7 +13,7 @@ export default {
       menus: [
         {
           title: "Spesialis THT",
-          url: "Spesialis THT",
+          url: "/JadwalPraktek",
         },
         {
           title: "Spesialis Bedah",

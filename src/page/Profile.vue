@@ -13,7 +13,7 @@ export default {
     return {
         isUser:"Dokter",
         userDokter: {
-          Nama: "dr. Rino Meridian, SpB (K) V",
+          Nama: "dr. Triana Darmayanti Akbar, SpA",
           ImageUrl: "google.com",
           Pendidikan: "Pendidikan Dokter UmumFakultas Kedokteran Universitas Trisakti lulus tahun 2003, Pendidikan Spesialis Bedah Umum di Universitas Indonesia lulus tahun 2012, Pendidikan Program Bedah Vaskular di Universitas Indonesia lulus tahun 2019",
           Course: "Dialysis Access SInergy (DASy), Singapore, tahun 2019  Workshop peripheral Intervention, INAVASC IX, Bali, tahun 2018  Instruktur pada pelatihan Workshop Vascular Access for Hemodialysis, IKABI, tahun 2017  Workshop pemasangan berbagai macam Akses Vaskuler di 6th INAVAS, Bekasi, tahun 2015",

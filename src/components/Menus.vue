@@ -41,6 +41,6 @@ export default {
     </ul>
   </div>
   <div v-else>
-    <a  class="py-2 px-4 border hover:text-gray-900  block" href="">{{ menu.title }}</a>
+    <router-link  class="py-2 px-4 border hover:text-gray-900  block" :to="menu.url">{{ menu.title }}</router-link>
   </div>
 </template>

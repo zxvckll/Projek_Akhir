@@ -8,6 +8,7 @@ import Login from "@/page/Login.vue";
 import Signin from "@/page/Signin.vue";
 import PendaftaranPasien from "@/page/PendaftaranPasien.vue";
 import Profile from '@/page/Profile.vue';
+import JadwalPraktek from '@/page/JadwalPraktek.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -21,6 +22,7 @@ const router = createRouter({
     },
     { path: "/Signin", name: "Signin", component: Signin },
     { path: "/Profile", name: "Profile", component: Profile },
+    { path: "/JadwalPraktek", name: "JadwalPraktek", component: JadwalPraktek },
   ],
 });
 
