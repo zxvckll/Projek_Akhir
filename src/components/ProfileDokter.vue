@@ -7,12 +7,14 @@ export default {
   data() {
     return {
       isUser: "Dokter",
+      isOpen: false,
     };
   },
   methods: {
     goBack() {
       this.$router.go(-1);
     },
+
   },
 };
 </script>
@@ -96,6 +98,7 @@ export default {
           :value="this.data.Organisasi"
         />
       </div>
+      
       <div class="mb-6">
         <button
           class="bg-green-400 text-black rounded py-2 px-4 hover:bg-green-600"
