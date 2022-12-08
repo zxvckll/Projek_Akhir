@@ -7,11 +7,11 @@ export default {
 
 <template>
   <Transition name="modal">
-    <div v-if="show" class="modal-mask text-gray-700">
-      <div class="modal-wrapper">
-        <div class="modal-container w-fit mx-auto">
+    <div v-if="show" class="modal-mask text-gray-700 h-full">
+      <div class="modal-wrapper ">
+        <div class="modal-container w-fit mx-auto ">
           <div
-            class="bg-gray-50 border border-gray-200 p-10 rounded max-w-lg mx-auto mt-24 mb-24"
+            class=" bg-gray-50 border border-gray-200 p-10 rounded max-w-lg mx-auto mt-24 mb-24"
           >
             <div class="mb-6"><h2>Delete Data</h2></div>
             <div class="mb-6"><p>Are you sure you want delete this data ?</p></div>
@@ -39,7 +39,7 @@ export default {
 <style>
 .modal-mask {
   position: fixed;
-  max-height: calc(100vh - 210px);
+  /* max-height: calc(100vh - 210px); */
   overflow-y: auto;
   z-index: 9998;
   top: 0;

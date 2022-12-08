@@ -22,7 +22,7 @@ export default {
       <!-- card img goes here -->
       <div class="card">
         <img
-        class="w-72 pb-10 mt-5"
+        class="mx-5 w-72 pb-10 mt-5"
           :src="
             data
               ? data.ImageUrl
@@ -31,8 +31,8 @@ export default {
           alt=""
         />
         <div>
-            <h2 class="pb-5 text-lg">Jadwal Praktek</h2>
-            <table class="border-collapse table-auto overflow-hidden shadow-md">
+            <h2 class="mx-5 pb-5 text-lg">Jadwal Praktek</h2>
+            <table class="mx-5 border-collapse table-auto overflow-hidden shadow-md">
                 <thead class="bg-green-400 text-left font-bold">
                     <tr>
                         <th>Hari</th>
@@ -56,13 +56,13 @@ export default {
       <!-- data goes here -->
       <div class="col-span-2">
         <div class="">
-          <h2 class="mt-5 my-5  text-xl ">{{ data.Nama }}</h2>
+          <h2 class="mt-5 my-5  text-xl text-black">{{ data.Nama }}</h2>
           <h3 class="my-5">{{ data.Pendidikan }}</h3>
-          <h3 class="my-1">Course / Training:</h3>
+          <h3 class="my-1 text-black">Course / Training:</h3>
           <p class="my-5">{{ data.Course }}</p>
-          <h3 class="my-1">Pengalaman bekerja:</h3>
+          <h3 class="my-1 text-black">Pengalaman bekerja:</h3>
           <p class="my-5">{{ data.Pengalaman }}</p>
-          <h3 class="my-1">Organisasi:</h3>
+          <h3 class="my-1 text-black">Organisasi:</h3>
           <p class="my-5">{{ data.Organisasi }}</p>
         </div>
       </div>

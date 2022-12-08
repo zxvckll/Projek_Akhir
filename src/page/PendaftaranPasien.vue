@@ -22,7 +22,7 @@ export default {
 
 <template>
   <div
-    class="text-gray-700 bg-gray-50 border border-gray-200 p-10 rounded max-w-lg mx-auto mt-24 mb-24"
+    class="border-4 text-gray-700 bg-gray-50 border border-gray-200 p-10 rounded max-w-lg mx-auto mt-24 mb-24"
   >
     <header class="text-center">
       <h2 class="text-2xl font-bold mb-1">

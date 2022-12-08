@@ -20,16 +20,21 @@ export default {
         this.showModal = true;
       }
     },
-    deleteData(){
-      console.log("delete data successfully")
-    }
-
+    openDeleteModal() {
+      let id = event.srcElement.id;
+      console.log(id);
+      this.selectedData = this.DataAntrian.filter((data) => data.NoRM == id);
+      this.showDeleteModal = true;
+    },
+    deleteData() {
+      console.log("delete data successfully");
+    },
   },
   data() {
     return {
       showModal: false,
       deleteModal: false,
-      showDeleteModal:false,
+      showDeleteModal: false,
       selectedData: {},
       DataAntrian: [
         {
@@ -107,7 +112,7 @@ export default {
           <td>{{ data.Status }}</td>
           <td class="flex items-center justify-center">
             <button
-            class="bg-green-400 text-black rounded py-2 px-4 hover:bg-green-600"
+              class="bg-green-400 text-black rounded py-2 px-4 hover:bg-green-600"
               :id="data.NoRM"
               @click="openModal()"
             >
@@ -125,10 +130,10 @@ export default {
             </Teleport>
 
             <button
-              @click="(showDeleteModal = true)"  
-            class="bg-red-400 text-black rounded py-2 px-4 hover:bg-red-600"
+              :id="data.NoRM"
+              @click="openDeleteModal()"
+              class="bg-red-400 text-black rounded py-2 px-4 hover:bg-red-600"
             >
-            
               Delete
             </button>
             <Teleport to="body">
