@@ -12,12 +12,11 @@ export default {
 </script>
 
 <template>
-  <div class=" px-auto">
+  <div class="  text-gray-900 text-sm flex justify-center items-center w-full">
     <!-- background image -->
-    <img
-      class="w-full"
-      src="https://img.freepik.com/premium-photo/long-hospital-corridor-with-empty-seats_117023-1679.jpg?w=2000"
-    />
+    <div class="mt-72 w-4/5 relative border rounded-md border-4 border-white  border-solid ">
+      <h1><span class="text-lg text-black">RS Medika Utama</span>  berdiri pada tahun 2015 setelah diakuisisi oleh PT Nusantara Medika Utama Terletak di Jl. Kusuma Bangsa No 1 Kanigoro Blitar Jawa Timur - Indonesia. Merupakan Rumah Sakit Tipe C Mendapatkan Akreditasi Paripurna dari Komite Akreditasi Rumah Sakit (KARS) Terdaftar sebagai Perusahaan Jasa Keselamatan dan Kesehatan Kerja (PJK3) Komposisi pasien yang ditanggung oleh BPJS dan non BPJS per tahun 2020 adalah .....% : ....%. Rumah Sakit memiliki kerjasama operasional dengan pihak ketiga untuk audiometri</h1>
+    </div>
 
   </div>
 </template>

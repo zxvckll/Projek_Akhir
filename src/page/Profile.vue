@@ -2,18 +2,22 @@
 // This starter template is using Vue 3 <script setup> SFCs
 import ProfilePasien from "@/components/ProfilePasien.vue";
 import ProfileDokter from "@/components/ProfileDokter.vue";
+import ProfileAdmin from "@/components/ProfileAdmin.vue";
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 export default {
   props: [],
   components: {
     ProfilePasien,
     ProfileDokter,
+    ProfileAdmin,
   },
   data() {
     return {
-      isUser: "Dokter",
+      isUser: "Admin",
       userDokter: {
         Nama: "dr. Triana Darmayanti Akbar, SpA",
+        Password: "123456",
+        Email: "example@mail.com",
         ImageUrl: "google.com",
         Pendidikan:
           "Pendidikan Dokter UmumFakultas Kedokteran Universitas Trisakti lulus tahun 2003, Pendidikan Spesialis Bedah Umum di Universitas Indonesia lulus tahun 2012, Pendidikan Program Bedah Vaskular di Universitas Indonesia lulus tahun 2019",
@@ -36,6 +40,7 @@ export default {
       userPasien: {
         Nama: "Andi",
         Email: "example@mail.com",
+        ImageUrl: "google.com",
         Pendidikan:
           "Pendidikan Dokter UmumFakultas Kedokteran Universitas Trisakti lulus tahun 2003, Pendidikan Spesialis Bedah Umum di Universitas Indonesia lulus tahun 2012, Pendidikan Program Bedah Vaskular di Universitas Indonesia lulus tahun 2019",
         Password: "123456",
@@ -43,8 +48,12 @@ export default {
         TanggalLahir: "11/12/2002",
         Umur: 20,
         Kewarganegaraan: "Indonesia",
-        Organisasi: "Anggota IDI Perhimpunan Spesialis Bedah Umum (PABI)",
-        Organisasi: "Anggota IDI Perhimpunan Spesialis Bedah Umum (PABI)",
+      },
+      userAdmin: {
+        Nama: "Andi",
+        Email: "example@mail.com",
+        Password: "123456",
+        ImageUrl: "google.com",
       },
     };
   },
@@ -62,6 +71,9 @@ export default {
   </div>
   <div v-if="isUser == 'Dokter'">
     <ProfileDokter :data="userDokter"></ProfileDokter>
+  </div>
+  <div v-if="isUser == 'Admin'">
+    <ProfileAdmin :data="userAdmin"></ProfileAdmin>
   </div>
 </template>
 

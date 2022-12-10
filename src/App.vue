@@ -8,12 +8,12 @@ import tes from './page/tes.vue'
 </script>
 
 <template>
-  <div>
+  <div class="app w-full mx-auto  ">
   <NavBarVue/>
   <router-view></router-view>
   </div>
   
-  <div class="" v-if="this.$route.fullPath=='/'">
+  <div class="hero1 w-full mx-auto min-h-screen" v-if="this.$route.fullPath=='/'">
     <hero></hero>
   </div>
 
@@ -21,5 +21,11 @@ import tes from './page/tes.vue'
 </template>
 
 <style scoped>
+.app {
+  background-image: url("https://img.freepik.com/premium-photo/long-hospital-corridor-with-empty-seats_117023-1679.jpg?w=2000");
+}
+.hero1 {
+  background-image: url("https://img.freepik.com/premium-photo/long-hospital-corridor-with-empty-seats_117023-1679.jpg?w=2000");
 
+}
 </style>

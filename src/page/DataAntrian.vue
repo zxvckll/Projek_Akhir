@@ -12,7 +12,7 @@ export default {
   },
   data() {
     return {
-        isUser : "Admin"
+        isUser : "Pasien"
 
     };
   },

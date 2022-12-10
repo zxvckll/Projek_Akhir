@@ -77,9 +77,9 @@ export default {
 </script>
 
 <template>
-  <div class="bg-white mx-auto mt-10 w-max h-max text-gray-700">
+  <div class="bg-white mx-auto mt-10 w-max h-max text-gray-700 min-h-screen bg-transparent">
     <table
-      class="border-collapse min-w-400 table-auto overflow-hidden shadow-md"
+      class="border-collapse min-w-400 table-auto overflow-hidden shadow-md bg-white"
     >
       <thead>
         <tr class="bg-green-500 text-center font-bold">
@@ -150,8 +150,7 @@ export default {
         </tr>
       </tbody>
     </table>
-  </div>
-  <div class="text-gray-700 w-full flex justify-center">
+    <div class="text-gray-700 w-full flex justify-center">
     <button
       :id="1"
       class="mt-10 py-3 px-5 bg-blue-400 text-black rounded hover:bg-blue-600"
@@ -160,6 +159,8 @@ export default {
       Tambah Data antrian
     </button>
   </div>
+  </div>
+
 </template>
 
 <style scoped></style>

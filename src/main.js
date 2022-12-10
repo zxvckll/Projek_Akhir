@@ -22,7 +22,7 @@ const router = createRouter({
     },
     { path: "/Signin", name: "Signin", component: Signin },
     { path: "/Profile", name: "Profile", component: Profile },
-    { path: "/JadwalPraktek", name: "JadwalPraktek", component: JadwalPraktek },
+    { path: "/Poliklinik/1", name: "JadwalPraktek", component: JadwalPraktek },
   ],
 });
 

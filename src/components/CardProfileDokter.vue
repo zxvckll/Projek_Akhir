@@ -11,7 +11,7 @@ export default {
     return {
       selectedJamPraktek: {},
       isUser : 'Dokter',
-      isAdmin : false,
+      isAdmin : true,
       DokterID : 124,
       showModal: false,
       showDeleteModal: false,
@@ -49,11 +49,11 @@ export default {
 <template>
   <div>
     <!-- <div class="h-28 bg-blue-200 text-gray-700"></div> -->
-    <div class="my-20 mx-20 grid grid-cols-3 bg-white text-gray-700">
+    <div class="my-20 mx-20 grid grid-cols-3 bg-white text-gray-700 rounded-md">
       <!-- card img goes here -->
       <div class="card">
         <img
-          class="mx-5 w-72 pb-10 mt-5"
+          class="mx-5 w-72 pb-10 mt-5 rounded-md"
           :src="
             data
               ? data.ImageUrl

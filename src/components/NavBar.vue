@@ -14,7 +14,7 @@ export default {
       menus: [
         {
           title: "Spesialis THT",
-          url: "/JadwalPraktek",
+          url: "/Poliklinik/1",
         },
         {
           title: "Spesialis Bedah",
@@ -28,31 +28,15 @@ export default {
               title: "Bedah Umum",
               url: "Bedah Umum",
             },
+            {
+              title: "Bedah Digestif",
+              url: "Bedah Umum",
+            },
           ],
         },
         {
           title: "Spesialis Anak",
           url: "Spesialis Anak",
-          subMenu: [
-            {
-              title: "Bedah Vaskular",
-              url: "Bedah Vaskular",
-            },
-            {
-              title: "Bedah Umum",
-              url: "Bedah Umum",
-              subMenu: [
-                {
-                  title: "Bedah Vaskular",
-                  url: "Bedah Vaskular",
-                },
-                {
-                  title: "Bedah Umum",
-                  url: "Bedah Umum",
-                },
-              ],
-            },
-          ],
         },
       ],
     };
