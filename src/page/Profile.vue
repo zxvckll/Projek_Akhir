@@ -13,7 +13,7 @@ export default {
   },
   data() {
     return {
-      isUser: "Admin",
+      isUser: "Pasien",
       userDokter: {
         Nama: "dr. Triana Darmayanti Akbar, SpA",
         Password: "123456",

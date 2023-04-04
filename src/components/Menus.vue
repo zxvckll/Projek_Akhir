@@ -9,12 +9,12 @@ export default {
 };
 </script>
 <template>
-  <div class="border relative" v-if="menu.subMenu">
+  <div class="border relative" v-if="menu.Clinics">
     <button
       @click="isMenuActive = !isMenuActive"
       class="py-2 px-4 hover:text-gray-900 inline "
     >
-      {{ menu.title}}<svg
+    Poliklinik {{ menu.name}}<svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
@@ -30,17 +30,17 @@ export default {
       </svg>
     </button>
     <ul
-      class="left-full absolute top-0 w-max justify-center grid-cols-1 absolute bg-gray-100 text-gray-700"
+      class="left-full  absolute top-0 w-max justify-center grid-cols-1 absolute bg-gray-100 text-gray-700"
     >
       <Menus
         :class="[isMenuActive ? 'hidden' : '']"
-        v-for="(subMenu, index) in menu.subMenu"
+        v-for="(subMenu, index) in menu.Clinics"
         v-bind:key="index"
         :menu="subMenu"
       ></Menus>
     </ul>
   </div>
   <div v-else>
-    <router-link  class="py-2 px-4 border hover:text-gray-900  block" :to="menu.url">{{ menu.title }}</router-link>
+    <router-link  class="py-2 px-4 border hover:text-gray-900  block" :to="`/${menu.name}`">Klinik {{  menu.name }}</router-link>
   </div>
 </template>

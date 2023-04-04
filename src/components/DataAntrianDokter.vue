@@ -2,11 +2,11 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 // import FormDataAntrian from "@/components/FormDataAntrian.vue";
-import Modal from "@/components/Modal.vue";
+import ModalDataAntrian from "@/components/ModalDataAntrian.vue";
 import DeleteModal from "./DeleteModal.vue";
 export default {
   components: {
-    Modal,
+    ModalDataAntrian,
     DeleteModal,
   },
   data() {
@@ -112,12 +112,12 @@ export default {
 
             <Teleport to="body">
               <!-- use the modal component, pass in the prop -->
-              <modal
+              <ModalDataAntrian
                 :data="selectedData"
                 :show="showModal"
                 @close="showModal = false"
               >
-              </modal>
+              </ModalDataAntrian>
             </Teleport>
 
             <button
@@ -141,8 +141,7 @@ export default {
         </tr>
       </tbody>
     </table>
-  </div>
-  <div class="text-gray-700 w-full flex justify-center">
+    <div class="text-gray-700 w-full flex justify-center">
     <button
       :id="1"
       class="mt-10 py-3 px-5 bg-blue-400 text-black rounded hover:bg-blue-600"
@@ -151,6 +150,8 @@ export default {
       Tambah Data antrian
     </button>
   </div>
+  </div>
+
 </template>
 
 <style scoped></style>
