@@ -1,66 +1,53 @@
 <script>
 import Menus from "./Menus.vue";
+import { mapGetters, mapActions } from "vuex";
+import axios from "axios";
 
 export default {
   components: {
     Menus,
   },
+  computed: {
+    ...mapGetters("auth", {
+      getUserRole: "getUserRole",
+      getUserId: "getUserId",
+    }),
+  },
   data() {
     return {
-      isActive: false,
+      //edit Data
+      polyclinics: [],
       isUser: true,
-      isMenuActive: true,
+      isActive: false,
+      isMenuActive: false,
       isProfile: false,
-      menus: [
-        {
-          title: "Spesialis THT",
-          url: "/JadwalPraktek",
-        },
-        {
-          title: "Spesialis Bedah",
-          url: "Spesialis Bedah",
-          subMenu: [
-            {
-              title: "Bedah Vaskular",
-              url: "Bedah Vaskular",
-            },
-            {
-              title: "Bedah Umum",
-              url: "Bedah Umum",
-            },
-          ],
-        },
-        {
-          title: "Spesialis Anak",
-          url: "Spesialis Anak",
-          subMenu: [
-            {
-              title: "Bedah Vaskular",
-              url: "Bedah Vaskular",
-            },
-            {
-              title: "Bedah Umum",
-              url: "Bedah Umum",
-              subMenu: [
-                {
-                  title: "Bedah Vaskular",
-                  url: "Bedah Vaskular",
-                },
-                {
-                  title: "Bedah Umum",
-                  url: "Bedah Umum",
-                },
-              ],
-            },
-          ],
-        },
-      ],
     };
   },
   methods: {
+    ...mapActions("auth", {
+      actionLogout: "logout",
+    }),
     toggle() {
       this.isActive = !this.isActive;
     },
+    logout() {
+      this.actionLogout();
+      alert("logout sucess");
+    },
+    async getListPolyclinic() {
+      var url = `http://localhost:5000/polyclinic/`;
+      try {
+        const response = await axios.get(url);
+        this.polyclinics = await response.data;
+        console.log(this.polyclinics);
+      } catch (error) {
+        console.error(error);
+      }
+    },
+  },
+
+  created() {
+    this.getListPolyclinic();
   },
 };
 </script>
@@ -72,6 +59,7 @@ export default {
         <!-- LEFT SIDE -->
         <div class="flex space-x-1">
           <!-- logo -->
+
           <div>
             <router-link to="/" class="flex items-center mr-3 py-5 px-3">
               <img
@@ -88,6 +76,8 @@ export default {
                 @click="isMenuActive = !isMenuActive"
                 class="py-5 px-4 text-gray-700 hover:text-gray-900"
               >
+               
+              
                 Jadwal Praktek
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -107,12 +97,14 @@ export default {
               <ul
                 class="left-0 w-max justify-center grid-cols-1 absolute bg-gray-100 text-gray-700"
               >
-                <Menus
-                  :class="[isMenuActive ? 'hidden' : '']"
-                  v-for="(menu, index) in this.menus"
-                  v-bind:key="index"
-                  :menu="menu"
-                />
+          
+                <div v-if="isMenuActive">
+                  <Menus
+                    v-for="(sam, index) in this.polyclinics"
+                    v-bind:key="index"
+                    :menu="sam"
+                  />
+                </div>
               </ul>
             </div>
             <router-link
@@ -125,16 +117,17 @@ export default {
             <router-link
               to="/DataAntrian"
               class="py-5 px-4 text-gray-700 hover:text-gray-900"
-              v-if="isUser"
+              v-if="getUserRole"
             >
               Data antrian
             </router-link>
           </div>
         </div>
         <!-- RIGHT SIDE -->
+
         <!-- secondary nav -->
         <div
-          v-if="!isUser"
+          v-if="!getUserRole"
           class="hidden md:flex items-center justify-between space-x-1"
         >
           <router-link
@@ -154,9 +147,7 @@ export default {
           v-else
           class="hidden md:flex items-center justify-between space-x-1 relative"
         >
-          <button class="text-gray-700"
-            @click="(isProfile = !isProfile)"
-          >
+          <button class="text-gray-700" @click="isProfile = !isProfile">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -177,12 +168,25 @@ export default {
             class="left-0 top-full w-max justify-center grid-cols-1 absolute bg-gray-100 text-gray-700"
           >
             <ul v-if="isProfile">
-              <li><router-link to="/Profile" class="py-2 px-4 border hover:text-gray-900  block" >Edit Profile</router-link></li>
-              <li><router-link class="py-2 px-4 border hover:text-gray-900  block" to="/">Log out</router-link></li>
+              <li>
+                <router-link
+                  to="/Profile"
+                  class="py-2 px-4 border hover:text-gray-900 block"
+                  >Edit Profile</router-link
+                >
+              </li>
+              <li>
+                <button
+                  class="py-2 px-4 border hover:text-gray-900 block"
+                  @click="logout()"
+                >
+                  Log out
+                </button>
+              </li>
             </ul>
           </div>
         </div>
-        <!--Mobile Button  -->
+        <!-- Mobile Button 
         <div class="md:hidden flex items-center text-gray-700">
           <button class="mobile-menu-button" @click="toggle">
             <svg
@@ -200,10 +204,10 @@ export default {
               />
             </svg>
           </button>
-        </div>
+        </div> -->
       </div>
     </div>
-    <!-- mobile nav -->
+    <!-- mobile nav
     <div
       class="mobile-menu text-gray-700 md:hidden block text-center"
       :class="[isActive ? 'hidden' : '']"
@@ -212,18 +216,13 @@ export default {
         <a class="block py-2 px-4 text-sm hover:bg-gray-200">
           Jadwal Praktek
         </a>
-        <!-- <ul class="absolute">
-                <li v-for="(menu,index) in this.menus" v-bind:key="index">
-                    <h1>{{ menu.title }}</h1> 
-                </li>
-            </ul> -->
       </div>
       <router-link
         to="/PendaftaranPasien"
         class="block py-2 px-4 text-sm hover:bg-gray-200"
         >Pendaftaran Pasien</router-link
       >
-      <div v-if="isUser">
+      <div v-if="getUserRole">
         <router-link
           to="/DataAntrian"
           class="block py-2 px-4 text-sm hover:bg-gray-200"
@@ -236,7 +235,7 @@ export default {
         >
       </div>
 
-      <div v-if="!isUser">
+      <div v-if="!getUserRole">
         <router-link
           to="/Login"
           class="block py-2 px-4 text-sm hover:bg-gray-200"
@@ -248,7 +247,7 @@ export default {
           >Signin</router-link
         >
       </div>
-    </div>
+    </div> -->
   </nav>
 
   <!-- content goes here -->

@@ -10,11 +10,11 @@ export default {
 
 <template>
   <Transition name="modal">
-    <div v-if="show" class="modal-mask text-gray-700">
-      <div class="modal-wrapper">
-        <div class="modal-container w-fit mx-auto">
+    <div v-if="show" class="modal-mask text-gray-700 h-screen">
+      <div class="modal-wrapper h-screen">
+        <div class="modal-container w-fit mx-auto ">
           <div
-            class="bg-gray-50 border border-gray-200 p-10 rounded max-w-lg mx-auto mt-24 mb-24"
+            class="h-full bg-gray-50 border border-gray-200 p-10 rounded max-w-lg mx-auto mt-24 mb-24"
           >
             <header class="text-center">
               <h2 class="text-2xl font-bold mb-1">
@@ -80,7 +80,7 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+
   background-color: rgba(0, 0, 0, 0.5);
   display: table;
   transition: opacity 0.3s ease;

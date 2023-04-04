@@ -64,6 +64,16 @@ export default {
           />
         </div>
         <div class="mb-6">
+          <label for="DokterID" class="inline-block text-lg mb-2"
+            >ID Dokter</label
+          >
+          <input
+            type="text"
+            class="border border-gray-200 rounded p-2 w-full"
+            name="DokterID"
+          />
+        </div>
+        <div class="mb-6">
           <label for="Alamat" class="inline-block text-lg mb-2"
             >Alamat</label
           >
@@ -91,16 +101,6 @@ export default {
             type="text"
             class="border border-gray-200 rounded p-2 w-full"
             name="Umur"
-          />
-        </div>
-        <div class="mb-6">
-          <label for="Kewarganegaraan" class="inline-block text-lg mb-2"
-            >Kewarganegaraan</label
-          >
-          <input
-            type="text"
-            class="border border-gray-200 rounded p-2 w-full"
-            name="Kewarganegaraan"
           />
         </div>
         <div class="mb-6">

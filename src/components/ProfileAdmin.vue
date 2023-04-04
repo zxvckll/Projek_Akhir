@@ -34,7 +34,7 @@ export default {
       </header>
       <!-- <form method="POST" action="/products" enctype="multipart/form-data"> -->
       <div class="mb-6">
-        <label for="Nama" class="inline-block text-lg mb-2">Nama Dokter</label>
+        <label for="Nama" class="inline-block text-lg mb-2">Nama Admin</label>
         <input
           type="text"
           class="border border-gray-200 rounded p-2 w-full"
@@ -74,52 +74,6 @@ export default {
           :value="this.data.ImageUrl"
         />
       </div>
-
-      <div class="mb-6">
-        <label for="Pendidikan" class="inline-block text-lg mb-2"
-          >Pendidikan</label
-        >
-        <input
-          type="text"
-          class="border border-gray-200 rounded p-2 w-full"
-          name="Pendidikan"
-          :value="this.data.Pendidikan"
-        />
-      </div>
-      <div class="mb-6">
-        <label for="Training" class="inline-block text-lg mb-2"
-          >Course / Training:</label
-        >
-        <textarea
-          rows="5"
-          class="border border-gray-200 rounded p-2 w-full"
-          name="Training"
-          :value="this.data.Course"
-        />
-      </div>
-      <div class="mb-6">
-        <label for="pengalamanBekerja:" class="inline-block text-lg mb-2"
-          >Pengalaman bekerja:</label
-        >
-        <textarea
-          rows="5"
-          class="border border-gray-200 rounded p-2 w-full"
-          name="pengalamanBekerja"
-          :value="this.data.Pengalaman"
-        />
-      </div>
-      <div class="mb-6">
-        <label for="Organisasi:" class="inline-block text-lg mb-2"
-          >Organisasi:</label
-        >
-        <textarea
-          rows="5"
-          class="border border-gray-200 rounded p-2 w-full"
-          name="Organisasi:"
-          :value="this.data.Organisasi"
-        />
-      </div>
-      
       <div class="mb-6">
         <button
           class="bg-green-400 text-black rounded py-2 px-4 hover:bg-green-600"

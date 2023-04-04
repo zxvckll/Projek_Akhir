@@ -1,14 +1,13 @@
 <script>
 export default {
   props: ["show", "data"],
-  methods: {},
 };
 </script>
 
 <template>
   <Transition name="modal">
     <div v-if="show" class="modal-mask text-gray-700 h-full">
-      <div class="modal-wrapper ">
+      <div class="modal-wrapper h-screen ">
         <div class="modal-container w-fit mx-auto ">
           <div
             class=" bg-gray-50 border border-gray-200 p-10 rounded max-w-lg mx-auto mt-24 mb-24"
@@ -19,7 +18,7 @@ export default {
               <div class="mb-6">
                 <button
                   class="bg-red-400 text-black rounded py-2 px-4 hover:bg-red-600"
-                  @click="$emit('delete')"
+                  @click="$emit('deleteprogress',this.data[0].id)"
                 >
                   Delete
                 </button>
